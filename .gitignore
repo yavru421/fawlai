@@ -1,0 +1,29 @@
+## Build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+dist/
+publish_temp/
+publish/
+out/
+
+## IDE and editor files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Agent & Deployment temporary files
+.antigravity/
+output/
+
+dotnet/
+.dev.vars
+.wrangler/

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Remote Dimension Tool</title>
+    <base href="/" />
+    
+    <!-- Apple PWA Standalone Mode Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="icon-192.png" />
+    <link href="FawlAI.styles.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    
+
+    
+    <script type="importmap"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="shotstack-loader">
+            <div class="spinner"></div>
+            <span class="loading-text">Mounting Pour & Measure...</span>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" style="width: var(--blazor-load-percentage, 0%)"></div>
+            </div>
+            <style>
+                .progress-text::after {
+                    content: var(--blazor-load-percentage-text, "0") "%";
+                }
+            </style>
+            <span class="progress-text">Loading... </span>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled exception occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">✕</a>
+    </div>
+
+    <!-- iOS Add to Home Screen Guidance -->
+    <div id="ios-pwa-prompt" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 16px; border-radius: 12px; z-index: 9999; text-align: center; width: 90%; max-width: 400px; font-family: sans-serif;">
+        <p style="margin: 0 0 10px 0; font-size: 14px;">Install this app on your iPhone: tap the <strong>Share</strong> icon below and select <strong>Add to Home Screen</strong>.</p>
+        <button id="ios-pwa-prompt-close-btn" style="background: #007aff; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: bold;">Got it</button>
+    </div>
+
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script src="js/pwa-helper.js"></script>
+    <script src="js/editorInteractions.js"></script>
+    <script src="js/zla-interop.js"></script>
+</body>
+</html>
+

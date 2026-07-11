@@ -1,0 +1,23 @@
+{
+  "name": "fawlai",
+  "main": "index.js",
+  "compatibility_date": "2024-05-26",
+  "build": {
+    "command": "bash build.sh"
+  },
+  "assets": {
+    "directory": "output/wwwroot",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "fawlai-db",
+      "database_id": "14592790-7fe0-4b60-bb6e-e6a41b4618ba"
+    }
+  ],
+  "vars": {
+    "ACCOUNT_ID": "your-account-id-placeholder",
+    "GATEWAY_NAME": "your-gateway-name-placeholder"
+  }
+}
