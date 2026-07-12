@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Remote Dimension Tool</title>
+    <title>FawlAI Concierge</title>
     <base href="/" />
     
     <!-- Apple PWA Standalone Mode Tags -->
@@ -17,6 +17,7 @@
     <link href="manifest.webmanifest" rel="manifest" />
     
 
+
     
     <script type="importmap"></script>
 </head>
@@ -24,7 +25,7 @@
     <div id="app">
         <div class="shotstack-loader">
             <div class="spinner"></div>
-            <span class="loading-text">Mounting Pour & Measure...</span>
+            <span class="loading-text">Mounting FawlAI...</span>
             <div class="progress-bar-container">
                 <div class="progress-bar-fill" style="width: var(--blazor-load-percentage, 0%)"></div>
             </div>
@@ -49,9 +50,8 @@
         <button id="ios-pwa-prompt-close-btn" style="background: #007aff; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: bold;">Got it</button>
     </div>
 
-    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
     <script src="js/pwa-helper.js"></script>
-    <script src="js/editorInteractions.js"></script>
     <script src="js/zla-interop.js"></script>
 </body>
 </html>

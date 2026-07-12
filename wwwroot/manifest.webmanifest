@@ -1,6 +1,6 @@
 {
-  "name": "Pour & Measure",
-  "short_name": "PourMeasure",
+  "name": "FawlAI",
+  "short_name": "FawlAI",
   "id": "/",
   "start_url": "/",
   "scope": "/",
@@ -21,7 +21,7 @@
       "sizes": "192x192"
     }
   ],
-  "description": "Real-time visual alignment guide for on-site mixing of concrete additives, epoxies, and sealants.",
+  "description": "FawlAI Household Concierge PWA.",
   "share_target": {
     "action": "/share-target",
     "method": "POST",
