@@ -13,8 +13,8 @@ export default {
       return new Response(null, { headers: corsHeaders });
     }
 
-    // Intercept POST request
-    if (request.method === "POST") {
+    // Intercept POST request for API routes
+    if (request.method === "POST" && url.pathname.startsWith("/api/")) {
       try {
         const body = await request.json();
         const userPrompt = body.question || "";
@@ -96,6 +96,13 @@ export default {
     }
 
     // Default: Fallback to serve the Blazor static assets (wwwroot files)
-    return env.ASSETS.fetch(request);
+    try {
+      if (!env.ASSETS) {
+        return new Response("Cloudflare Worker Assets binding (env.ASSETS) is missing. Check compatibility_date in wrangler.jsonc.", { status: 500 });
+      }
+      return await env.ASSETS.fetch(request);
+    } catch (err) {
+      return new Response(`Assets fetch failed: ${err.message}`, { status: 500 });
+    }
   }
 };
