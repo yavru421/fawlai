@@ -1,0 +1,25 @@
+name: Deploy FawlAI to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # wrangler deploy reads wrangler.jsonc, runs build.sh (which installs .NET 10
+      # and runs dotnet publish), then uploads index.js + output/wwwroot/** as ASSETS.
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4'
+          command: deploy
