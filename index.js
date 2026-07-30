@@ -62,8 +62,11 @@ function addCorsHeaders(response, origin) {
  * Response:     { result, model, chunkIndex, totalChunks }  (or SSE stream)
  */
 async function handleInfer(request, env, corsHeaders) {
-  const body = await request.json();
-  const { task_type = "summarize", prompt = "", chunkIndex = 0, totalChunks = 1 } = body;
+  return new Response(JSON.stringify({ error: "FawlAI Workers AI inference engine disabled by administrator." }), {
+    status: 503,
+    headers: { "Content-Type": "application/json", ...corsHeaders }
+  });
+}
 
   if (!prompt.trim()) {
     return new Response(JSON.stringify({ error: "Missing 'prompt' in body." }), {

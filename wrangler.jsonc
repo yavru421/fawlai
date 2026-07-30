@@ -15,9 +15,5 @@
       "database_name": "fawlai-db",
       "database_id": "14592790-7fe0-4b60-bb6e-e6a41b4618ba"
     }
-  ],
-  "vars": {
-    "ACCOUNT_ID": "your-account-id-placeholder",
-    "GATEWAY_NAME": "your-gateway-name-placeholder"
-  }
+  ]
 }
